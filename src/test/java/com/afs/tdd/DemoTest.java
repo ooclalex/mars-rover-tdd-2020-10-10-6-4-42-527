@@ -8,7 +8,7 @@ class DemoTest {
     @Test
     public void should_return_y_1_when_execute_command_given_N_0_0_M() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, 'N');
+        MarsRover marsRover = new MarsRover(0, 0, "N");
 
         // when
         marsRover.executeCommands("M");
@@ -16,6 +16,6 @@ class DemoTest {
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(1, marsRover.getY());
-        assertEquals('N', marsRover.getDirection());
+        assertEquals("N", marsRover.getDirection());
     }
 }

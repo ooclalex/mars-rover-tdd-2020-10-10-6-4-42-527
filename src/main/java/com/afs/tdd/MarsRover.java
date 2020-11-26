@@ -1,28 +1,37 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
     private int xPosition;
     private int yPosition;
-    private char direction;
+    private String direction;
 
-    public MarsRover(int xPosition, int yPosition, char direction) {
+    public MarsRover(int xPosition, int yPosition, String direction) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.direction = direction;
     }
 
-    public void executeCommands(String m) {
+    public void executeCommands(String commands) {
+        Arrays.asList(commands.split("")).forEach(this::executeCommand);
+    }
+
+    public void executeCommand(String command) {
+        if (command.equals("M") && this.getDirection().equals("N")) {
+            this.yPosition++;
+        }
     }
 
     public int getX() {
-        return 0;
+        return this.xPosition;
     }
 
     public int getY() {
-        return 0;
+        return this.yPosition;
     }
 
-    public char getDirection() {
-        return 0;
+    public String getDirection() {
+        return this.direction;
     }
 }
