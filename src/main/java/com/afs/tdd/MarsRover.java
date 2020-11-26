@@ -29,6 +29,9 @@ public class MarsRover {
                 case "E":
                     this.xPosition++;
                     break;
+                case "W":
+                    this.xPosition--;
+                    break;
             }
         }
     }
