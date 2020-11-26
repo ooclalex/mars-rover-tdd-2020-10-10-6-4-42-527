@@ -3,6 +3,13 @@ package com.afs.tdd;
 import java.util.Arrays;
 
 public class MarsRover {
+    public final String EAST = "E";
+    public final String WEST = "W";
+    public final String NORTH = "N";
+    public final String SOUTH = "S";
+    public final String MOVE = "M";
+    public final String LEFT = "L";
+    public final String RIGHT = "R";
     private int xPosition;
     private int yPosition;
     private String direction;
@@ -19,50 +26,53 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         switch (command) {
-            case "M":
+            case MOVE:
                 switch (this.getDirection()) {
-                    case "N":
+                    case NORTH:
                         this.yPosition++;
                         break;
-                    case "S":
+                    case SOUTH:
                         this.yPosition--;
                         break;
-                    case "E":
+                    case EAST:
                         this.xPosition++;
                         break;
-                    case "W":
+                    case WEST:
                         this.xPosition--;
                         break;
                 }
                 break;
-            case "L":
-                if ("N".equals(this.getDirection())) {
-                    this.direction = "W";
-                }
-                else if ("W".equals(this.getDirection())) {
-                    this.direction = "S";
-                }
-                else if ("S".equals(this.getDirection())) {
-                    this.direction = "E";
-                }
-                else if ("E".equals(this.getDirection())) {
-                    this.direction = "N";
-                }
-                break;
-            case "R":
-                if ("N".equals(this.getDirection())) {
-                    this.direction = "E";
-                }
-                else if ("W".equals(this.getDirection())) {
-                    this.direction = "N";
-                }
-                else if ("S".equals(this.getDirection())) {
-                    this.direction = "W";
-                }
-                else if ("E".equals(this.getDirection())) {
-                    this.direction = "S";
+            case LEFT:
+                switch (this.getDirection()) {
+                    case NORTH:
+                        this.direction = WEST;
+                        break;
+                    case WEST:
+                        this.direction = SOUTH;
+                        break;
+                    case SOUTH:
+                        this.direction = EAST;
+                        break;
+                    case EAST:
+                        this.direction = NORTH;
+                        break;
                 }
                 break;
+            case RIGHT:
+                switch (this.getDirection()) {
+                    case NORTH:
+                        this.direction = EAST;
+                        break;
+                    case EAST:
+                        this.direction = SOUTH;
+                        break;
+                    case SOUTH:
+                        this.direction = WEST;
+                        break;
+                    case WEST:
+                        this.direction = NORTH;
+                        break;
+                }
         }
     }
 
