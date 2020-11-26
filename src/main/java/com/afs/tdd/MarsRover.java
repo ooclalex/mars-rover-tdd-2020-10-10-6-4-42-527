@@ -34,6 +34,11 @@ public class MarsRover {
                     break;
             }
         }
+        else if (command.equals("L")) {
+            if ("N".equals(this.getDirection())) {
+                this.direction = "W";
+            }
+        }
     }
 
     public int getX() {
