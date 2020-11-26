@@ -45,6 +45,9 @@ public class MarsRover {
                 else if ("S".equals(this.getDirection())) {
                     this.direction = "E";
                 }
+                else if ("E".equals(this.getDirection())) {
+                    this.direction = "N";
+                }
                 break;
             case "R":
                 if ("N".equals(this.getDirection())) {
