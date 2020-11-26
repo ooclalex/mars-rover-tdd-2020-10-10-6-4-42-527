@@ -18,26 +18,33 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if (command.equals("M")) {
-            switch (this.getDirection()) {
-                case "N":
-                    this.yPosition++;
-                    break;
-                case "S":
-                    this.yPosition--;
-                    break;
-                case "E":
-                    this.xPosition++;
-                    break;
-                case "W":
-                    this.xPosition--;
-                    break;
-            }
-        }
-        else if (command.equals("L")) {
-            if ("N".equals(this.getDirection())) {
-                this.direction = "W";
-            }
+        switch (command) {
+            case "M":
+                switch (this.getDirection()) {
+                    case "N":
+                        this.yPosition++;
+                        break;
+                    case "S":
+                        this.yPosition--;
+                        break;
+                    case "E":
+                        this.xPosition++;
+                        break;
+                    case "W":
+                        this.xPosition--;
+                        break;
+                }
+                break;
+            case "L":
+                if ("N".equals(this.getDirection())) {
+                    this.direction = "W";
+                }
+                break;
+            case "R":
+                if ("N".equals(this.getDirection())) {
+                    this.direction = "E";
+                }
+                break;
         }
     }
 
