@@ -20,6 +20,8 @@ public class MarsRover {
     public void executeCommand(String command) {
         if (command.equals("M") && this.getDirection().equals("N")) {
             this.yPosition++;
+        } else if (command.equals("M") && this.getDirection().equals("S")) {
+            this.yPosition--;
         }
     }
 
