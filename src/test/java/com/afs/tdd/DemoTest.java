@@ -4,193 +4,186 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DemoTest {
-    public final String EAST = "E";
-    public final String WEST = "W";
-    public final String NORTH = "N";
-    public final String SOUTH = "S";
-    public final String MOVE = "M";
-    public final String LEFT = "L";
-    public final String RIGHT = "R";
 
     @Test
     public void should_return_y_1_when_execute_command_given_N_0_0_M() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, NORTH);
+        MarsRover marsRover = new MarsRover(0, 0, "N");
 
         // when
-        marsRover.executeCommands(MOVE);
+        marsRover.executeCommands("M");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(1, marsRover.getY());
-        assertEquals(NORTH, marsRover.getDirection());
+        assertEquals("N", marsRover.getDirection());
     }
 
     @Test
     public void should_return_y_neg_1_when_execute_command_given_S_0_0_M() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, SOUTH);
+        MarsRover marsRover = new MarsRover(0, 0, "S");
 
         // when
-        marsRover.executeCommands(MOVE);
+        marsRover.executeCommands("M");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(-1, marsRover.getY());
-        assertEquals(SOUTH, marsRover.getDirection());
+        assertEquals("S", marsRover.getDirection());
     }
 
     @Test
     public void should_return_x_1_when_execute_command_given_E_0_0_M() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, EAST);
+        MarsRover marsRover = new MarsRover(0, 0, "E");
 
         // when
-        marsRover.executeCommands(MOVE);
+        marsRover.executeCommands("M");
 
         // then
         assertEquals(1, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(EAST, marsRover.getDirection());
+        assertEquals("E", marsRover.getDirection());
     }
 
     @Test
     public void should_return_x_neg_1_when_execute_command_given_W_0_0_M() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, WEST);
+        MarsRover marsRover = new MarsRover(0, 0, "W");
 
         // when
-        marsRover.executeCommands(MOVE);
+        marsRover.executeCommands("M");
 
         // then
         assertEquals(-1, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(WEST, marsRover.getDirection());
+        assertEquals("W", marsRover.getDirection());
     }
 
     @Test
     public void should_return_direction_west_when_execute_command_given_N_0_0_L() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, NORTH);
+        MarsRover marsRover = new MarsRover(0, 0, "N");
 
         // when
-        marsRover.executeCommands(LEFT);
+        marsRover.executeCommands("L");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(WEST, marsRover.getDirection());
+        assertEquals("W", marsRover.getDirection());
     }
 
     @Test
     public void should_return_direction_east_when_execute_command_given_N_0_0_R() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, NORTH);
+        MarsRover marsRover = new MarsRover(0, 0, "N");
 
         // when
-        marsRover.executeCommands(RIGHT);
+        marsRover.executeCommands("R");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(EAST, marsRover.getDirection());
+        assertEquals("E", marsRover.getDirection());
     }
 
     @Test
     public void should_return_direction_north_when_execute_command_given_W_0_0_R() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, WEST);
+        MarsRover marsRover = new MarsRover(0, 0, "W");
 
         // when
-        marsRover.executeCommands(RIGHT);
+        marsRover.executeCommands("R");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(NORTH, marsRover.getDirection());
+        assertEquals("N", marsRover.getDirection());
     }
 
     @Test
     public void should_return_direction_south_when_execute_command_given_W_0_0_L() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, WEST);
+        MarsRover marsRover = new MarsRover(0, 0, "W");
 
         // when
-        marsRover.executeCommands(LEFT);
+        marsRover.executeCommands("L");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(SOUTH, marsRover.getDirection());
+        assertEquals("S", marsRover.getDirection());
     }
 
     @Test
     public void should_return_direction_east_when_execute_command_given_S_0_0_L() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, SOUTH);
+        MarsRover marsRover = new MarsRover(0, 0, "S");
 
         // when
-        marsRover.executeCommands(LEFT);
+        marsRover.executeCommands("L");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(EAST, marsRover.getDirection());
+        assertEquals("E", marsRover.getDirection());
     }
 
     @Test
     public void should_return_direction_west_when_execute_command_given_S_0_0_R() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, SOUTH);
+        MarsRover marsRover = new MarsRover(0, 0, "S");
 
         // when
-        marsRover.executeCommands(RIGHT);
+        marsRover.executeCommands("R");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(WEST, marsRover.getDirection());
+        assertEquals("W", marsRover.getDirection());
     }
 
     @Test
     public void should_return_direction_south_when_execute_command_given_E_0_0_R() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, EAST);
+        MarsRover marsRover = new MarsRover(0, 0, "E");
 
         // when
-        marsRover.executeCommands(RIGHT);
+        marsRover.executeCommands("R");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(SOUTH, marsRover.getDirection());
+        assertEquals("S", marsRover.getDirection());
     }
 
     @Test
     public void should_return_direction_north_when_execute_command_given_E_0_0_L() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, EAST);
+        MarsRover marsRover = new MarsRover(0, 0, "E");
 
         // when
-        marsRover.executeCommands(LEFT);
+        marsRover.executeCommands("L");
 
         // then
         assertEquals(0, marsRover.getX());
         assertEquals(0, marsRover.getY());
-        assertEquals(NORTH, marsRover.getDirection());
+        assertEquals("N", marsRover.getDirection());
     }
 
     @Test
     public void should_return_x_1_y_1_direction_east_when_execute_command_given_N_0_0_R_M_L_M_R() {
         // given
-        MarsRover marsRover = new MarsRover(0, 0, NORTH);
+        MarsRover marsRover = new MarsRover(0, 0, "N");
 
         // when
-        marsRover.executeCommands(RIGHT+MOVE+LEFT+MOVE+RIGHT);
+        marsRover.executeCommands("RMLMR");
 
         // then
         assertEquals(1, marsRover.getX());
         assertEquals(1, marsRover.getY());
-        assertEquals(EAST, marsRover.getDirection());
+        assertEquals("E", marsRover.getDirection());
     }
 }

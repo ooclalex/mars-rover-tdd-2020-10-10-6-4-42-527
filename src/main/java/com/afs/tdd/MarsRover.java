@@ -20,6 +20,7 @@ public class MarsRover {
         this.direction = direction;
     }
 
+    // this should appear when last test case appears
     public void executeCommands(String commands) {
         Arrays.asList(commands.split("")).forEach(this::executeCommand);
     }
